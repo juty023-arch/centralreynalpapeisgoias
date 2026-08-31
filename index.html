@@ -1,141 +1,121 @@
+import os
+from weasyprint import HTML
+
 html_content = """<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Reynal Comércio de Papéis - Portal Institucional</title>
+    <title>Reynal Comércio de Papéis - Brand & Profile</title>
     <style>
         @page {
             size: A4;
             margin: 0;
-            background-color: #f4f6f9;
+            background-color: #faf8f5;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
         }
 
         body {
-            background-color: #f4f6f9;
-            color: #1e293b;
+            background-color: #faf8f5;
+            color: #2b2623;
             font-size: 10pt;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
         }
 
-        .container {
-            padding: 0;
+        /* Hero Modern Header */
+        .header-container {
+            background-color: #1c2d27;
+            color: #f4efe6;
+            padding: 40px 45px 35px 45px;
+            position: relative;
         }
 
-        /* Full Bleed Top Banner */
-        .top-banner {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #ffffff;
-            padding: 32px 35px 28px 35px;
-            border-bottom: 4px solid #0284c7;
+        .sans-font {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
         }
 
-        .header-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .logo-tag {
+        .brand-badge {
             display: inline-block;
-            background-color: #0284c7;
-            color: #ffffff;
-            font-size: 8pt;
+            border: 1px solid #c5a059;
+            color: #d4af37;
+            font-size: 7.5pt;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 4px 10px;
-            border-radius: 3px;
-            margin-bottom: 8px;
+            letter-spacing: 3px;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 15px;
         }
 
-        .company-title {
-            font-size: 20pt;
-            font-weight: 800;
+        .main-title {
+            font-size: 26pt;
+            font-weight: 400;
             letter-spacing: -0.5px;
             color: #ffffff;
-            line-height: 1.2;
+            margin-bottom: 6px;
+            line-height: 1.1;
         }
 
-        .company-subtitle {
-            font-size: 9.5pt;
-            color: #94a3b8;
-            margin-top: 4px;
+        .main-title span {
+            color: #c5a059;
+            font-style: italic;
         }
 
-        .status-pill {
-            display: inline-block;
-            background-color: rgba(16, 185, 129, 0.15);
-            border: 1px solid #10b981;
-            color: #34d399;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 8.5pt;
+        .subtitle {
+            font-size: 10pt;
+            color: #a3b3ac;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        /* Decorative Gold Accent Bar */
+        .accent-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #c5a059 0%, #e6ca65 50%, #1c2d27 100%);
+        }
+
+        /* Body Wrapper */
+        .wrapper {
+            padding: 32px 45px;
+        }
+
+        /* Intro Statement */
+        .intro-card {
+            background-color: #ffffff;
+            border-left: 4px solid #c5a059;
+            padding: 18px 22px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .intro-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-size: 11pt;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-
-        /* Content Area */
-        .main-content {
-            padding: 28px 35px;
-        }
-
-        /* Key Metrics Row */
-        .metrics-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 12px 0;
-            margin-left: -12px;
-            margin-right: -12px;
-            margin-bottom: 24px;
-        }
-
-        .metric-card {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 14px 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-            vertical-align: top;
-            width: 33.33%;
-        }
-
-        .metric-label {
-            font-size: 7.5pt;
+            color: #1c2d27;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #64748b;
-            font-weight: 700;
+            margin-bottom: 4px;
         }
 
-        .metric-value {
-            font-size: 11pt;
-            font-weight: 800;
-            color: #0f172a;
-            margin-top: 4px;
+        .intro-desc {
+            font-size: 9.5pt;
+            color: #554f4a;
         }
 
-        .metric-sub {
-            font-size: 8pt;
-            color: #0284c7;
-            font-weight: 600;
-            margin-top: 2px;
-        }
-
-        /* Section Layout Table */
+        /* Two Column Layout */
         .grid-table {
             width: 100%;
             border-collapse: separate;
-            border-spacing: 16px 0;
-            margin-left: -16px;
-            margin-right: -16px;
+            border-spacing: 20px 0;
+            margin-left: -20px;
+            margin-right: -20px;
         }
 
         .grid-col {
@@ -143,288 +123,269 @@ html_content = """<!DOCTYPE html>
             vertical-align: top;
         }
 
-        /* Panel Container */
-        .panel {
-            background: #ffffff;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 20px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        /* Elegantly Styled Boxes */
+        .section-box {
+            background-color: #ffffff;
+            border: 1px solid #e8e2d8;
+            border-radius: 10px;
+            padding: 22px;
+            margin-bottom: 22px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
-        .panel-header {
-            background-color: #f8fafc;
-            padding: 12px 18px;
-            border-bottom: 1px solid #e2e8f0;
+        .box-header {
+            border-bottom: 1px solid #f0eae1;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
         }
 
-        .panel-title {
-            font-size: 9.5pt;
+        .box-header-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-size: 10pt;
             font-weight: 800;
+            color: #1c2d27;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: #0f172a;
-            border-left: 3px solid #0284c7;
-            padding-left: 8px;
+            letter-spacing: 1.5px;
         }
 
-        .panel-body {
-            padding: 16px 18px;
+        /* Data Items */
+        .item-group {
+            margin-bottom: 12px;
         }
 
-        /* Data Rows Inside Panel */
-        .data-row {
-            padding: 8px 0;
-            border-bottom: 1px dashed #f1f5f9;
-        }
-
-        .data-row:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .data-row:first-child {
-            padding-top: 0;
-        }
-
-        .data-label {
-            font-size: 7.5pt;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #64748b;
-            font-weight: 600;
-        }
-
-        .data-value {
-            font-size: 9.5pt;
-            color: #1e293b;
-            font-weight: 600;
-            margin-top: 2px;
-        }
-
-        /* Highlight Boxes for Contact */
-        .contact-item {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 10px 12px;
-            margin-bottom: 10px;
-        }
-
-        .contact-item:last-child {
+        .item-group:last-child {
             margin-bottom: 0;
         }
 
-        .contact-icon-label {
+        .item-label {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             font-size: 7.5pt;
             font-weight: 700;
             text-transform: uppercase;
-            color: #0284c7;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            color: #8c827a;
         }
 
-        .contact-text {
-            font-size: 9.5pt;
+        .item-value {
+            font-size: 10pt;
+            color: #1c2d27;
+            font-weight: 600;
+            margin-top: 1px;
+        }
+
+        .badge-status {
+            display: inline-block;
+            background-color: #e6f4ea;
+            color: #137333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-size: 8pt;
             font-weight: 700;
-            color: #0f172a;
+            padding: 3px 10px;
+            border-radius: 4px;
             margin-top: 2px;
         }
 
-        /* Address Highlight Card */
-        .address-box {
-            background-color: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 6px;
-            padding: 12px 14px;
+        /* Modern Contact Pill Cards */
+        .contact-pill {
+            background-color: #f7f4ee;
+            border: 1px solid #e2dad0;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
         }
 
-        .address-title {
-            font-size: 8pt;
-            font-weight: 800;
+        .contact-pill-label {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-size: 7pt;
+            font-weight: 700;
             text-transform: uppercase;
-            color: #1e40af;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
+            color: #c5a059;
+            letter-spacing: 1px;
         }
 
-        .address-line {
-            font-size: 9pt;
-            color: #1e3a8a;
-            line-height: 1.4;
+        .contact-pill-val {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-size: 10pt;
+            font-weight: 700;
+            color: #1c2d27;
+            margin-top: 2px;
         }
 
-        /* Footer */
-        .footer {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #e2e8f0;
-            text-align: center;
+        /* Premium Address Card */
+        .address-card {
+            background-color: #1c2d27;
+            color: #f4efe6;
+            border-radius: 8px;
+            padding: 18px;
+            margin-top: 8px;
+        }
+
+        .address-card-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             font-size: 8pt;
-            color: #94a3b8;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #c5a059;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
         }
 
-        .footer strong {
-            color: #64748b;
+        .address-card-body {
+            font-size: 9.5pt;
+            color: #e2dad0;
+            line-height: 1.5;
+        }
+
+        /* Elegant Footer */
+        .footer {
+            margin-top: 10px;
+            border-top: 1px solid #e8e2d8;
+            padding-top: 18px;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-size: 8pt;
+            color: #8c827a;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Top Header Banner -->
-        <div class="top-banner">
-            <table class="header-table">
-                <tr>
-                    <td>
-                        <div class="logo-tag">DISTRIBUIÇÃO & COMÉRCIO</div>
-                        <div class="company-title">REYNAL COMÉRCIO DE PAPÉIS</div>
-                        <div class="company-subtitle">Portal Institucional • Ficha da Unidade Operacional</div>
-                    </td>
-                    <td style="text-align: right; vertical-align: middle;">
-                        <div class="status-pill">● CADASTRO ATIVO</div>
-                    </td>
-                </tr>
-            </table>
+        <!-- Luxury Top Header -->
+        <div class="header-container">
+            <div class="brand-badge sans-font">Comércio & Distribuição de Papéis</div>
+            <div class="main-title">Reynal <span>Papéis</span></div>
+            <div class="subtitle">Reynal Comércio de Papéis LTDA — Painel de Apresentação Institucional</div>
         </div>
+        <div class="accent-bar"></div>
 
-        <div class="main-content">
-            <!-- Metric Summary Cards -->
-            <table class="metrics-table">
-                <tr>
-                    <td class="metric-card">
-                        <div class="metric-label">Tempo de Atividade</div>
-                        <div class="metric-value">12 Anos</div>
-                        <div class="metric-sub">Desde 16/12/2013</div>
-                    </td>
-                    <td class="metric-card">
-                        <div class="metric-label">Porte Empresarial</div>
-                        <div class="metric-value">EPP</div>
-                        <div class="metric-sub">Pequeno Porte</div>
-                    </td>
-                    <td class="metric-card">
-                        <div class="metric-label">Capital Social</div>
-                        <div class="metric-value">R$ 10.000,00</div>
-                        <div class="metric-sub">Capital Integralizado</div>
-                    </td>
-                </tr>
-            </table>
+        <div class="wrapper">
+            <!-- Key Headline Box -->
+            <div class="intro-card">
+                <div class="intro-title">Tradição & Qualidade no Mercado de Papéis</div>
+                <div class="intro-desc">
+                    Há mais de 12 anos oferecendo soluções completas em distribuição de papéis, estruturada com excelência operacional e registro cadastral 100% ativo.
+                </div>
+            </div>
 
-            <!-- Main Layout Grid -->
+            <!-- Main Columns -->
             <table class="grid-table">
                 <tr>
-                    <!-- Left Column: Dados Fiscais e Societários -->
+                    <!-- Left Column -->
                     <td class="grid-col">
-                        <div class="panel">
-                            <div class="panel-header">
-                                <div class="panel-title">Informações de Registro & Jurídico</div>
+                        <div class="section-box">
+                            <div class="box-header">
+                                <div class="box-header-title">Perfil Corporativo & Registro</div>
                             </div>
-                            <div class="panel-body">
-                                <div class="data-row">
-                                    <div class="data-label">Razão Social</div>
-                                    <div class="data-value">Reynal Comércio de Papéis LTDA</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">Inscrição Estadual (SP)</div>
-                                    <div class="data-value">143.093.145.119</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">Tipo de Unidade</div>
-                                    <div class="data-value">Filial</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">Natureza Jurídica</div>
-                                    <div class="data-value">Sociedade Empresária Limitada</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">Data de Abertura</div>
-                                    <div class="data-value">16/12/2013 (12 anos, 8 meses e 15 dias)</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">Situação Cadastral</div>
-                                    <div class="data-value" style="color: #059669; font-weight: 700;">Ativa desde 16/12/2013</div>
-                                </div>
+
+                            <div class="item-group">
+                                <div class="item-label">Razão Social</div>
+                                <div class="item-value">Reynal Comércio de Papéis LTDA</div>
+                            </div>
+
+                            <div class="item-group">
+                                <div class="item-label">Inscrição Estadual (SP)</div>
+                                <div class="item-value">143.093.145.119</div>
+                            </div>
+
+                            <div class="item-group">
+                                <div class="item-label">Situação Cadastral</div>
+                                <div><span class="badge-status">● ATIVA DESDE 16/12/2013</span></div>
+                            </div>
+
+                            <div class="item-group" style="margin-top: 8px;">
+                                <div class="item-label">Classificação & Porte</div>
+                                <div class="item-value">Filial — Empresa de Pequeno Porte (EPP)</div>
+                            </div>
+
+                            <div class="item-group">
+                                <div class="item-label">Natureza Jurídica</div>
+                                <div class="item-value">Sociedade Empresária Limitada</div>
+                            </div>
+
+                            <div class="item-group">
+                                <div class="item-label">Tempo de Atividade</div>
+                                <div class="item-value">12 Anos, 8 Meses e 15 Dias</div>
+                            </div>
+
+                            <div class="item-group">
+                                <div class="item-label">Capital Social Integralizado</div>
+                                <div class="item-value">R$ 10.000,00</div>
                             </div>
                         </div>
 
-                        <div class="panel">
-                            <div class="panel-header">
-                                <div class="panel-title">Enquadramento Tributário</div>
+                        <div class="section-box">
+                            <div class="box-header">
+                                <div class="box-header-title">Regime Tributário</div>
                             </div>
-                            <div class="panel-body">
-                                <div class="data-row">
-                                    <div class="data-label">Opção pelo MEI</div>
-                                    <div class="data-value">Não</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">Opção pelo Simples Nacional</div>
-                                    <div class="data-value">Não</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">Período de Exclusão do Simples</div>
-                                    <div class="data-value">01/07/2007 até 31/12/2024</div>
-                                </div>
+
+                            <div class="item-group">
+                                <div class="item-label">Opção pelo MEI / Simples Nacional</div>
+                                <div class="item-value">Não optante</div>
+                            </div>
+
+                            <div class="item-group">
+                                <div class="item-label">Histórico de Exclusão Simples</div>
+                                <div class="item-value">01/07/2007 até 31/12/2024</div>
                             </div>
                         </div>
                     </td>
 
-                    <!-- Right Column: Canais & Endereço -->
+                    <!-- Right Column -->
                     <td class="grid-col">
-                        <div class="panel">
-                            <div class="panel-header">
-                                <div class="panel-title">Canais de Contato</div>
+                        <div class="section-box">
+                            <div class="box-header">
+                                <div class="box-header-title">Canais de Atendimento</div>
                             </div>
-                            <div class="panel-body">
-                                <div class="contact-item">
-                                    <div class="contact-icon-label">E-mail Corporativo / Departamento</div>
-                                    <div class="contact-text">escritorio@sacontabil.com.br</div>
-                                </div>
-                                <div class="contact-item">
-                                    <div class="contact-icon-label">Telefone Principal</div>
-                                    <div class="contact-text">(11) 3851-3020</div>
-                                </div>
-                                <div class="contact-item">
-                                    <div class="contact-icon-label">Telefone Secundário</div>
-                                    <div class="contact-text">(11) 3966-3088</div>
-                                </div>
+
+                            <div class="contact-pill">
+                                <div class="contact-pill-label">E-mail Corporativo</div>
+                                <div class="contact-pill-val">escritorio@sacontabil.com.br</div>
+                            </div>
+
+                            <div class="contact-pill">
+                                <div class="contact-pill-label">Telefone de Atendimento I</div>
+                                <div class="contact-pill-val">(11) 3851-3020</div>
+                            </div>
+
+                            <div class="contact-pill">
+                                <div class="contact-pill-label">Telefone de Atendimento II</div>
+                                <div class="contact-pill-val">(11) 3966-3088</div>
                             </div>
                         </div>
 
-                        <div class="panel">
-                            <div class="panel-header">
-                                <div class="panel-title">Localização do Estabelecimento</div>
+                        <div class="section-box">
+                            <div class="box-header">
+                                <div class="box-header-title">Localização do Estabelecimento</div>
                             </div>
-                            <div class="panel-body">
-                                <div class="data-row">
-                                    <div class="data-label">Logradouro</div>
-                                    <div class="data-value">Avenida Deputado Emílio Carlos, 730</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">Complemento</div>
-                                    <div class="data-value">Anexo e 730 B</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">Bairro</div>
-                                    <div class="data-value">Limão</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">Município / UF</div>
-                                    <div class="data-value">São Paulo — SP</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">CEP</div>
-                                    <div class="data-value">02720-100</div>
-                                </div>
-                                
-                                <div style="margin-top: 14px;">
-                                    <div class="address-box">
-                                        <div class="address-title">Endereço para Correspondência</div>
-                                        <div class="address-line">
-                                            <strong>Reynal Comércio de Papéis LTDA</strong><br>
-                                            Av. Dep. Emílio Carlos, 730 — Anexo e 730 B<br>
-                                            Bairro Limão, São Paulo - SP<br>
-                                            CEP: 02720-100
-                                        </div>
-                                    </div>
+
+                            <div class="item-group">
+                                <div class="item-label">Endereço</div>
+                                <div class="item-value">Avenida Deputado Emílio Carlos, 730</div>
+                            </div>
+
+                            <div class="item-group">
+                                <div class="item-label">Complemento</div>
+                                <div class="item-value">Anexo e 730 B</div>
+                            </div>
+
+                            <div class="item-group">
+                                <div class="item-label">Bairro & Cidade</div>
+                                <div class="item-value">Limão — São Paulo / SP</div>
+                            </div>
+
+                            <div class="item-group">
+                                <div class="item-label">CEP</div>
+                                <div class="item-value">02720-100</div>
+                            </div>
+
+                            <div class="address-card">
+                                <div class="address-card-title">Correspondência Oficial</div>
+                                <div class="address-card-body">
+                                    <strong>Reynal Comércio de Papéis LTDA</strong><br>
+                                    Av. Dep. Emílio Carlos, 730 — Anexo e 730 B<br>
+                                    Bairro Limão • São Paulo - SP<br>
+                                    CEP 02720-100
                                 </div>
                             </div>
                         </div>
@@ -434,9 +395,19 @@ html_content = """<!DOCTYPE html>
 
             <!-- Footer -->
             <div class="footer">
-                <strong>Reynal Comércio de Papéis LTDA</strong> • Documento Institucional Informativo
+                Reynal Comércio de Papéis LTDA • Apresentação Institucional • Todos os direitos reservados.
             </div>
         </div>
     </div>
 </body>
 </html>
+"""
+
+html_path = "index_reynal_v3.html"
+pdf_path = "index_reynal_v3.pdf"
+
+with open(html_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+HTML(filename=html_path).write_pdf(pdf_path)
+print("Versão V3 gerada com sucesso!")
