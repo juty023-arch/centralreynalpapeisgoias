@@ -1,440 +1,478 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head> <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18383933199"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reynal Comércio de Papéis — Distribuição de papéis em São Paulo</title>
+<meta name="description" content="Offset, sulfite, cartão e gramaturas especiais para gráficas, editoras e embalagens. Fornecimento recorrente e entrega na Grande São Paulo. CNPJ 47.693.601/0001-90." />
+<meta property="og:title" content="Reynal Comércio de Papéis — Distribuição de papéis" />
+<meta property="og:description" content="Principais serviços, linha de gramaturas, cotação e localização em Vila Nova Cachoeirinha, São Paulo/SP." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Reynal Comércio de Papéis" />
+<meta name="twitter:description" content="Papéis offset, sulfite, cartão e especiais com fornecimento recorrente na Grande São Paulo." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  /* ============ Kraft Editorial Grid — tokens ============ */
+  :root{
+    --cream:#F3EFE4; --cream-deep:#EBE5D6; --kraft:#B98A5E; --kraft-deep:#A2744C;
+    --ink:#3B3733; --ink-soft:#6B645C; --accent:#B4552F;
+    --hair:rgba(59,55,51,.12); --hair-strong:rgba(59,55,51,.2);
+    --display:"Fraunces",Georgia,"Times New Roman",serif;
+    --body:"Libre Franklin",system-ui,-apple-system,sans-serif;
+    --radius:min(1vw,12px);
+    --leaf:0 1px 2px rgba(59,55,51,.06), 0 10px 24px -14px rgba(59,55,51,.28);
+    --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--cream);color:var(--ink);font-family:var(--body);
+    font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:rgba(180,85,47,.18)}
+  /* grão de papel sobre a página inteira */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.5;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E");
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  @media(min-width:1024px){.wrap{padding:0 40px}}
+  h1,h2,h3,.display{font-family:var(--display);font-weight:500;letter-spacing:-.015em}
+  address{font-style:normal}
+  a{color:inherit;text-decoration:none}
+  section[id]{scroll-margin-top:88px}
 
-  gtag('config', 'AW-18383933199');
-</script>
+  /* ============ NAV ============ */
+  .nav{
+    position:sticky;top:0;z-index:50;background:rgba(243,239,228,.9);
+    backdrop-filter:blur(6px);border-bottom:1px solid var(--hair);
+  }
+  .nav-in{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:baseline;gap:12px}
+  .brand b{font-family:var(--display);font-size:1.6rem;font-weight:600;letter-spacing:-.03em}
+  .brand span{font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--ink-soft)}
+  .nav-links{display:none;gap:32px;font-size:.9rem;color:var(--ink-soft)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .btn-ink{
+    background:var(--ink);color:var(--cream);font-size:.9rem;font-weight:500;
+    padding:9px 20px;border-radius:2px;box-shadow:inset 0 0 0 1px var(--ink);transition:background .2s;
+  }
+  .btn-ink:hover{background:var(--ink-soft)}
+  @media(min-width:820px){.nav-links{display:flex}}
 
-  <!-- Event snippet for Visualização de página conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18383933199/RhdECMqg8eocEI-ekr5E',
-      'value': 1.0,
-      'currency': 'BRL'
-  });
-</script>
+  /* ============ HERO ============ */
+  .hero{padding:80px 0 64px}
+  .hero-grid{display:grid;gap:40px}
+  .kicker{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+  .kicker em{font-style:normal;font-size:11px;text-transform:uppercase;letter-spacing:.28em;color:var(--accent)}
+  .kicker i{display:block;height:1px;width:40px;background:rgba(59,55,51,.3)}
+  .kicker s{text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.28em;color:var(--ink-soft)}
+  .hero h1{font-size:clamp(2.6rem,7vw,3.75rem);line-height:.98;max-width:20ch;text-wrap:balance}
+  .hero p.lead{margin-top:32px;max-width:46ch;font-size:1.1rem;color:var(--ink-soft);text-wrap:pretty}
+  .hero-cta{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+  .btn-accent{
+    display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--cream);
+    font-size:.9rem;font-weight:500;padding:13px 24px;border-radius:2px;box-shadow:inset 0 0 0 1px var(--accent);transition:filter .2s;
+  }
+  .btn-accent:hover{filter:brightness(.94)}
+  .link-underline{border-bottom:1px solid rgba(59,55,51,.4);padding-bottom:2px;font-size:.9rem;font-weight:500;transition:border-color .2s}
+  .link-underline:hover{border-color:var(--ink)}
 
-  <!-- Event snippet for Visualização de página conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18383933199/RhdECMqg8eocEI-ekr5E',
-      'value': 1.0,
-      'currency': 'BRL',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
+  /* pilha de folhas em CSS puro */
+  .sheets{position:relative;aspect-ratio:4/5;width:100%;border-radius:var(--radius);box-shadow:var(--leaf)}
+  .sheet{position:absolute;inset:0;border-radius:var(--radius);outline:1px solid rgba(0,0,0,.05);outline-offset:-1px}
+  .s1{background:var(--kraft);transform:rotate(-3.2deg) translate(10px,12px);opacity:.55}
+  .s2{background:var(--cream-deep);transform:rotate(2deg) translate(-6px,6px)}
+  .s3{background:var(--kraft-deep);transform:rotate(-1.2deg) translate(4px,3px);opacity:.4}
+  .top{
+    background:
+      linear-gradient(155deg,#FFFDF7 0%,#F5EFE2 45%,#E7DFCE 100%);
+    overflow:hidden;
+  }
+  .top::after{
+    content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(90deg,rgba(59,55,51,.045) 0 1px,transparent 1px 26px);
+    opacity:.7;
+  }
+  .top .stamp{
+    position:absolute;left:28px;top:28px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--kraft-deep);border:1px solid rgba(162,116,76,.45);padding:6px 10px;border-radius:2px;
+  }
+  .top .mark{
+    position:absolute;right:-10px;bottom:-46px;font-family:var(--display);font-size:14rem;line-height:1;
+    color:rgba(185,138,94,.16);user-select:none;
+  }
+  .top .cut{position:absolute;left:0;right:0;top:52%;height:1px;background:rgba(59,55,51,.14)}
+  .top .barcode{position:absolute;left:28px;bottom:26px;display:flex;align-items:flex-end;gap:3px;height:34px}
+  .top .barcode i{display:block;width:2px;background:rgba(59,55,51,.45)}
+  .hero-caption{margin-top:16px;display:flex;align-items:baseline;justify-content:space-between;font-size:.75rem;color:var(--ink-soft)}
+  .hero-caption span:first-child{text-transform:uppercase;letter-spacing:.18em}
+  .hero-caption span:last-child{font-family:var(--display);font-size:1rem;color:var(--ink)}
+  @media(min-width:1024px){
+    .hero{padding-top:112px}
+    .hero-grid{grid-template-columns:7fr 5fr;gap:48px;align-items:center}
+  }
 
+  /* ============ RÉGUA ============ */
+  .ruler{display:flex;align-items:center;gap:16px}
+  .ruler b{font-family:var(--display);font-size:.9rem;font-weight:500;color:var(--accent)}
+  .ruler i{flex:1;height:1px;background:rgba(59,55,51,.15)}
+  .ruler span{font-size:11px;text-transform:uppercase;letter-spacing:.24em;color:var(--ink-soft)}
 
-    
-    <meta charset="UTF-8">
-    <title>Reynal Comércio de Papéis - Brand & Profile</title>
-    <style>
-        @page {
-            size: A4;
-            margin: 0;
-            background-color: #faf8f5;
-        }
+  /* ============ SERVIÇOS ============ */
+  .services{padding:64px 0}
+  .cards{display:grid;gap:20px}
+  .card{
+    background:rgba(235,229,214,.6);box-shadow:inset 0 0 0 1px var(--hair);border-radius:var(--radius);
+    padding:24px;transition:transform .3s,box-shadow .3s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--leaf)}
+  .card.dark{background:var(--ink);color:var(--cream);box-shadow:inset 0 0 0 1px var(--ink)}
+  .card.dark p{color:rgba(243,239,228,.7)}
+  .card-top{display:flex;align-items:flex-start;justify-content:space-between}
+  .num{font-family:var(--display);font-size:1.9rem;color:rgba(162,116,76,.7)}
+  .card.dark .num{color:rgba(243,239,228,.4)}
+  .card svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.4;color:var(--ink-soft);flex:none}
+  .card.dark svg{color:rgba(243,239,228,.7)}
+  .card h3{margin-top:24px;font-size:1.1rem}
+  .card p{margin-top:8px;font-size:.9rem;line-height:1.6;color:var(--ink-soft)}
+  @media(min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.cards{grid-template-columns:repeat(3,1fr)}}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Georgia', 'Times New Roman', serif;
-        }
+  /* ============ SOBRE ============ */
+  .about{padding:64px 0}
+  .about-grid{display:grid;gap:40px}
+  .about .statement{font-family:var(--display);font-size:clamp(1.7rem,3.4vw,2.35rem);line-height:1.15;max-width:40ch;text-wrap:balance}
+  .about .body{margin-top:24px;max-width:52ch;color:var(--ink-soft);text-wrap:pretty}
+  .idcard{background:rgba(235,229,214,.6);box-shadow:inset 0 0 0 1px var(--hair);border-radius:var(--radius);padding:24px}
+  .idcard .tag{font-size:11px;text-transform:uppercase;letter-spacing:.24em;color:var(--ink-soft)}
+  .idcard dl{margin-top:16px;font-size:.9rem}
+  .idcard .row{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--hair);padding-bottom:12px;margin-bottom:12px}
+  .idcard .row:last-child{border-bottom:0;padding-bottom:0;margin-bottom:0}
+  .idcard dt{color:var(--ink-soft)}
+  .idcard dd{text-align:right}
+  .idcard dd.cnpj{font-family:var(--display);font-size:1rem}
+  @media(min-width:1024px){.about-grid,.quote-grid{grid-template-columns:7fr 5fr;gap:48px}}
 
-        body {
-            background-color: #faf8f5;
-            color: #2b2623;
-            font-size: 10pt;
-            line-height: 1.6;
-        }
+  /* ============ PRODUTOS ============ */
+  .products{padding:64px 0}
+  .bento{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;grid-auto-rows:minmax(150px,1fr)}
+  .tile{border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 0 0 0 1px var(--hair)}
+  .tile.cream{background:rgba(235,229,214,.6)}
+  .tile.kraft{background:rgba(185,138,94,.25)}
+  .tile.ink{background:var(--ink);color:var(--cream);box-shadow:inset 0 0 0 1px var(--ink)}
+  .tile.ink p{color:rgba(243,239,228,.7)}
+  .tile .g{font-family:var(--display);line-height:1;font-size:1.9rem;color:rgba(162,116,76,.8)}
+  .tile.ink .g{font-size:3rem;color:var(--cream)}
+  .tile h3{font-family:var(--display);font-weight:500;font-size:1rem;margin-top:16px}
+  .tile p{margin-top:8px;font-size:.9rem;color:var(--ink-soft)}
+  .tile.big{grid-column:span 2;grid-row:span 2;padding:24px}
+  .tile.big .g{font-size:3rem}
+  .tile.big h3{font-size:1.25rem}
+  .tile.wide{grid-column:span 2}
+  .tile.wide h3{font-size:1.25rem}
+  .note{margin-top:24px;font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:var(--ink-soft)}
+  @media(min-width:1024px){.bento{grid-template-columns:repeat(4,1fr)}}
 
-        /* Hero Modern Header */
-        .header-container {
-            background-color: #1c2d27;
-            color: #f4efe6;
-            padding: 40px 45px 35px 45px;
-            position: relative;
-        }
+  /* ============ COTAÇÃO + CARTÃO ============ */
+  .quote{padding:64px 0 80px}
+  .quote-grid{display:grid;gap:32px}
+  .form-panel{background:rgba(235,229,214,.5);box-shadow:inset 0 0 0 1px var(--hair);border-radius:var(--radius);padding:28px}
+  .form-panel h2{font-size:1.5rem}
+  .form-panel .sub{margin-top:8px;font-size:.9rem;color:var(--ink-soft)}
+  form{margin-top:28px;display:grid;gap:16px}
+  label{display:block}
+  label span{font-size:.75rem;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-soft)}
+  input,select{
+    margin-top:8px;width:100%;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:.9rem;
+    border:1px solid var(--hair-strong);border-radius:2px;padding:12px 16px;transition:border-color .2s;
+  }
+  input::placeholder{color:rgba(107,100,92,.55)}
+  input:focus,select:focus{outline:none;border-color:var(--accent)}
+  .submit{
+    grid-column:1/-1;background:var(--accent);color:var(--cream);font-family:var(--body);font-size:.9rem;font-weight:500;
+    border:0;box-shadow:inset 0 0 0 1px var(--accent);border-radius:2px;padding:13px 24px;cursor:pointer;transition:filter .2s;
+  }
+  .submit:hover{filter:brightness(.94)}
+  .ok{margin-top:28px;border:1px solid rgba(180,85,47,.3);background:var(--cream);border-radius:2px;padding:28px;text-align:center}
+  .ok p.t{font-family:var(--display);font-size:1.25rem;font-weight:500}
+  .ok p.b{margin:12px auto 0;max-width:38ch;font-size:.9rem;color:var(--ink-soft)}
+  .ok button{margin-top:24px;background:none;border:0;border-bottom:1px solid rgba(59,55,51,.4);padding-bottom:2px;font-family:var(--body);font-size:.9rem;font-weight:500;color:var(--ink);cursor:pointer}
+  .ok button:hover{border-color:var(--ink)}
+  @media(min-width:640px){form{grid-template-columns:repeat(2,1fr)}}
 
-        .sans-font {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-        }
+  .bizcard{position:relative;overflow:hidden;background:var(--cream);border:1px solid var(--hair-strong);border-radius:var(--radius);padding:28px;box-shadow:var(--leaf)}
+  .bizcard .watermark{position:absolute;right:-8px;bottom:-24px;font-family:var(--display);font-size:9rem;line-height:1;color:rgba(185,138,94,.1);user-select:none}
+  .bizcard .tag{position:relative;font-size:11px;text-transform:uppercase;letter-spacing:.24em;color:var(--accent)}
+  .bizcard h3{position:relative;margin-top:20px;font-size:1.5rem;line-height:1.15}
+  .bizcard address{position:relative;margin-top:24px;font-size:.9rem;line-height:1.7;color:var(--ink-soft)}
+  .bizcard .chips{position:relative;margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .chip{display:inline-block;border:1px solid rgba(185,138,94,.3);color:rgba(162,116,76,.75);border-radius:2px;padding:6px 12px;font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+  .chip.map{border-color:var(--hair-strong);color:var(--ink-soft);transition:border-color .2s,color .2s}
+  .chip.map:hover{border-color:var(--ink);color:var(--ink)}
+  .fill{position:relative;margin-top:20px;border-top:1px dashed var(--hair-strong);padding-top:16px;font-size:.8rem;color:var(--ink-soft)}
+  .fill b{color:var(--kraft-deep);font-weight:500}
 
-        .brand-badge {
-            display: inline-block;
-            border: 1px solid #c5a059;
-            color: #d4af37;
-            font-size: 7.5pt;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            padding: 5px 14px;
-            border-radius: 50px;
-            margin-bottom: 15px;
-        }
-
-        .main-title {
-            font-size: 26pt;
-            font-weight: 400;
-            letter-spacing: -0.5px;
-            color: #ffffff;
-            margin-bottom: 6px;
-            line-height: 1.1;
-        }
-
-        .main-title span {
-            color: #c5a059;
-            font-style: italic;
-        }
-
-        .subtitle {
-            font-size: 10pt;
-            color: #a3b3ac;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            letter-spacing: 0.5px;
-        }
-
-        /* Decorative Gold Accent Bar */
-        .accent-bar {
-            height: 4px;
-            background: linear-gradient(90deg, #c5a059 0%, #e6ca65 50%, #1c2d27 100%);
-        }
-
-        /* Body Wrapper */
-        .wrapper {
-            padding: 32px 45px;
-        }
-
-        /* Intro Statement */
-        .intro-card {
-            background-color: #ffffff;
-            border-left: 4px solid #c5a059;
-            padding: 18px 22px;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 28px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        }
-
-        .intro-title {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            font-size: 11pt;
-            font-weight: 700;
-            color: #1c2d27;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
-
-        .intro-desc {
-            font-size: 9.5pt;
-            color: #554f4a;
-        }
-
-        /* Two Column Layout */
-        .grid-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 20px 0;
-            margin-left: -20px;
-            margin-right: -20px;
-        }
-
-        .grid-col {
-            width: 50%;
-            vertical-align: top;
-        }
-
-        /* Elegantly Styled Boxes */
-        .section-box {
-            background-color: #ffffff;
-            border: 1px solid #e8e2d8;
-            border-radius: 10px;
-            padding: 22px;
-            margin-bottom: 22px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
-
-        .box-header {
-            border-bottom: 1px solid #f0eae1;
-            padding-bottom: 12px;
-            margin-bottom: 16px;
-        }
-
-        .box-header-title {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            font-size: 10pt;
-            font-weight: 800;
-            color: #1c2d27;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        /* Data Items */
-        .item-group {
-            margin-bottom: 12px;
-        }
-
-        .item-group:last-child {
-            margin-bottom: 0;
-        }
-
-        .item-label {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            font-size: 7.5pt;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: #8c827a;
-        }
-
-        .item-value {
-            font-size: 10pt;
-            color: #1c2d27;
-            font-weight: 600;
-            margin-top: 1px;
-        }
-
-        .badge-status {
-            display: inline-block;
-            background-color: #e6f4ea;
-            color: #137333;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            font-size: 8pt;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 4px;
-            margin-top: 2px;
-        }
-
-        /* Modern Contact Pill Cards */
-        .contact-pill {
-            background-color: #f7f4ee;
-            border: 1px solid #e2dad0;
-            border-radius: 8px;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-        }
-
-        .contact-pill-label {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            font-size: 7pt;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #c5a059;
-            letter-spacing: 1px;
-        }
-
-        .contact-pill-val {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            font-size: 10pt;
-            font-weight: 700;
-            color: #1c2d27;
-            margin-top: 2px;
-        }
-
-        /* Premium Address Card */
-        .address-card {
-            background-color: #1c2d27;
-            color: #f4efe6;
-            border-radius: 8px;
-            padding: 18px;
-            margin-top: 8px;
-        }
-
-        .address-card-title {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            font-size: 8pt;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #c5a059;
-            letter-spacing: 1.5px;
-            margin-bottom: 8px;
-        }
-
-        .address-card-body {
-            font-size: 9.5pt;
-            color: #e2dad0;
-            line-height: 1.5;
-        }
-
-        /* Elegant Footer */
-        .footer {
-            margin-top: 10px;
-            border-top: 1px solid #e8e2d8;
-            padding-top: 18px;
-            text-align: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            font-size: 8pt;
-            color: #8c827a;
-            letter-spacing: 0.5px;
-        }
-    </style>
+  /* ============ RODAPÉ ============ */
+  footer{background:var(--ink);color:var(--cream);border-top:1px solid var(--hair-strong)}
+  .foot{display:grid;gap:40px;padding:56px 0}
+  .foot .fbrand{font-family:var(--display);font-size:1.5rem;font-weight:600}
+  .foot p.d{margin-top:16px;font-size:.9rem;color:rgba(243,239,228,.6)}
+  .foot .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.24em;color:rgba(243,239,228,.5)}
+  .foot .val{margin-top:12px;font-size:.9rem;color:rgba(243,239,228,.8);line-height:1.7}
+  .foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid rgba(243,239,228,.1);padding:24px 0;font-size:.75rem;color:rgba(243,239,228,.4)}
+  .foot-bottom .r{text-transform:uppercase;letter-spacing:.18em}
+  @media(min-width:768px){.foot{grid-template-columns:repeat(3,1fr)}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Luxury Top Header -->
-        <div class="header-container">
-            <div class="brand-badge sans-font">Comércio & Distribuição de Papéis</div>
-            <div class="main-title">Reynal <span>Papéis</span></div>
-            <div class="subtitle">Reynal Comércio de Papéis LTDA — Painel de Apresentação Institucional</div>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <div class="brand"><b>Reynal</b><span>Comércio de Papéis</span></div>
+    <nav class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#localizacao">Localização</a>
+    </nav>
+    <a class="btn-ink" href="#cotacao">Solicitar orçamento</a>
+  </div>
+</header>
+
+<main>
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker"><em>Distribuição</em><i></i><s>Grande São Paulo</s></div>
+        <h1>O papel certo, cortado no peso exato do seu impresso.</h1>
+        <p class="lead">Offset, sulfite, cartão e gramaturas especiais para gráficas, editoras e
+        embalagens — fornecimento recorrente e entrega precisa na região metropolitana.</p>
+        <div class="hero-cta">
+          <a class="btn-accent" href="#cotacao">Obter uma cotação</a>
+          <a class="link-underline" href="#servicos">Ver principais serviços</a>
         </div>
-        <div class="accent-bar"></div>
-
-        <div class="wrapper">
-            <!-- Key Headline Box -->
-            <div class="intro-card">
-                <div class="intro-title">Tradição & Qualidade no Mercado de Papéis</div>
-                <div class="intro-desc">
-                    Há mais de 12 anos oferecendo soluções completas em distribuição de papéis, estruturada com excelência operacional e registro cadastral 100% ativo.
-                </div>
+      </div>
+      <div>
+        <div class="sheets" role="img" aria-label="Pilha de folhas de papel cru e kraft com corte preciso, vista de cima">
+          <span class="sheet s1"></span>
+          <span class="sheet s2"></span>
+          <span class="sheet s3"></span>
+          <div class="sheet top">
+            <span class="stamp">Reynal · catálogo</span>
+            <span class="cut"></span>
+            <span class="mark">R</span>
+            <div class="barcode">
+              <i style="height:100%"></i><i style="height:60%"></i><i style="height:100%"></i><i style="height:35%"></i>
+              <i style="height:100%"></i><i style="height:75%"></i><i style="height:100%"></i><i style="height:45%"></i>
+              <i style="height:100%"></i><i style="height:65%"></i><i style="height:100%"></i>
             </div>
-
-            <!-- Main Columns -->
-            <table class="grid-table">
-                <tr>
-                    <!-- Left Column -->
-                    <td class="grid-col">
-                        <div class="section-box">
-                            <div class="box-header">
-                                <div class="box-header-title">Perfil Corporativo & Registro</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">Razão Social</div>
-                                <div class="item-value">Reynal Comércio de Papéis LTDA</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">Inscrição Estadual (SP)</div>
-                                <div class="item-value">143.093.145.119</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">Situação Cadastral</div>
-                                <div><span class="badge-status">● ATIVA DESDE 16/12/2013</span></div>
-                            </div>
-
-                            <div class="item-group" style="margin-top: 8px;">
-                                <div class="item-label">Classificação & Porte</div>
-                                <div class="item-value">Filial — Empresa de Pequeno Porte (EPP)</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">Natureza Jurídica</div>
-                                <div class="item-value">Sociedade Empresária Limitada</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">Tempo de Atividade</div>
-                                <div class="item-value">12 Anos, 8 Meses e 15 Dias</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">Capital Social Integralizado</div>
-                                <div class="item-value">R$ 10.000,00</div>
-                            </div>
-                        </div>
-
-                        <div class="section-box">
-                            <div class="box-header">
-                                <div class="box-header-title">Regime Tributário</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">Opção pelo MEI / Simples Nacional</div>
-                                <div class="item-value">Não optante</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">Histórico de Exclusão Simples</div>
-                                <div class="item-value">01/07/2007 até 31/12/2024</div>
-                            </div>
-                        </div>
-                    </td>
-
-                    <!-- Right Column -->
-                    <td class="grid-col">
-                        <div class="section-box">
-                            <div class="box-header">
-                                <div class="box-header-title">Canais de Atendimento</div>
-                            </div>
-
-                            <div class="contact-pill">
-                                <div class="contact-pill-label">E-mail Corporativo</div>
-                                <div class="contact-pill-val">escritorio@sacontabil.com.br</div>
-                            </div>
-
-                            <div class="contact-pill">
-                                <div class="contact-pill-label">Telefone de Atendimento I</div>
-                                <div class="contact-pill-val">(11) 3851-3020</div>
-                            </div>
-
-                            <div class="contact-pill">
-                                <div class="contact-pill-label">Telefone de Atendimento II</div>
-                                <div class="contact-pill-val">(11) 3966-3088</div>
-                            </div>
-                        </div>
-
-                        <div class="section-box">
-                            <div class="box-header">
-                                <div class="box-header-title">Localização do Estabelecimento</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">Endereço</div>
-                                <div class="item-value">Avenida Deputado Emílio Carlos, 730</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">Complemento</div>
-                                <div class="item-value">Anexo e 730 B</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">Bairro & Cidade</div>
-                                <div class="item-value">Limão — São Paulo / SP</div>
-                            </div>
-
-                            <div class="item-group">
-                                <div class="item-label">CEP</div>
-                                <div class="item-value">02720-100</div>
-                            </div>
-
-                            <div class="address-card">
-                                <div class="address-card-title">Correspondência Oficial</div>
-                                <div class="address-card-body">
-                                    <strong>Reynal Comércio de Papéis LTDA</strong><br>
-                                    Av. Dep. Emílio Carlos, 730 — Anexo e 730 B<br>
-                                    Bairro Limão • São Paulo - SP<br>
-                                    CEP 02720-100
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- Footer -->
-            <div class="footer">
-                Reynal Comércio de Papéis LTDA • Apresentação Institucional • Todos os direitos reservados.
-            </div>
+          </div>
         </div>
+        <div class="hero-caption"><span>Lote 04</span><span>300 g/m² · cortado</span></div>
+      </div>
     </div>
+  </section>
+
+  <div class="wrap"><div class="ruler"><b>01</b><i></i><span>Serviços</span></div></div>
+
+  <!-- ======================== PRINCIPAIS SERVIÇOS ======================== -->
+  <section id="servicos" class="services">
+    <div class="wrap cards">
+      <article class="card">
+        <div class="card-top"><span class="num">01</span>
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></svg></div>
+        <h3>Offset e sulfite</h3>
+        <p>Folhas e bobinas para impressão editorial e comercial, em caixas fechadas.</p>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="num">02</span>
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 12h16M4 16h10"/></svg></div>
+        <h3>Cartão e embalagens</h3>
+        <p>Gramaturas rígidas para cartões, caixas kraft e rótulos de alto padrão.</p>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="num">03</span>
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></div>
+        <h3>Especiais e gramaturas</h3>
+        <p>Papéis metalizados, texturizados e de gramatura sob consulta técnica.</p>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="num">04</span>
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 1 1 2.4 5.7M4 12V6m0 6h6"/></svg></div>
+        <h3>Fornecimento recorrente</h3>
+        <p>Contratos contínuos para gráficas e editoras com reposição programada.</p>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="num">05</span>
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13h11V6H3zM14 9h4l3 3v4h-7M6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg></div>
+        <h3>Logística e entrega</h3>
+        <p>Entrega na Grande São Paulo com roteirização de cargas e conferência.</p>
+      </article>
+      <article class="card dark">
+        <div class="card-top"><span class="num">06</span>
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H8l-4 4z"/></svg></div>
+        <h3>Cotação sob medida</h3>
+        <p>Atendimento dedicado para especificar papel, formato e volume ideal.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="ruler"><b>02</b><i></i><span>Sobre a Reynal</span></div></div>
+
+  <!-- ============================ SOBRE ============================ -->
+  <section id="sobre" class="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="statement">Uma distribuidora paulistana dedicada ao comércio atacadista de papéis
+        para o setor gráfico.</p>
+        <p class="body">Atendemos gráficas, editoras e indústrias de embalagem com curadoria de tipos
+        e gramaturas, priorizando consistência de fornecimento e atendimento técnico próximo.</p>
+      </div>
+      <div class="idcard">
+        <span class="tag">Identificação</span>
+        <dl>
+          <div class="row"><dt>Razão social</dt><dd>Reynal Comércio de Papéis LTDA</dd></div>
+          <div class="row"><dt>CNPJ</dt><dd class="cnpj">47.693.601/0001-90</dd></div>
+          <div class="row"><dt>Bairro</dt><dd>Vl. N. Cachoeirinha</dd></div>
+          <div class="row"><dt>Município / UF</dt><dd>São Paulo / SP</dd></div>
+          <div class="row"><dt>CEP</dt><dd>02721-200</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="ruler"><b>03</b><i></i><span>Linha de produtos</span></div></div>
+
+  <!-- ============================ PRODUTOS ============================ -->
+  <section id="produtos" class="products">
+    <div class="wrap">
+      <div class="bento">
+        <div class="tile big cream"><span class="g">75</span>
+          <div><h3>Offset 75 g/m²</h3><p>Para miolo editorial e impressões em grande volume.</p></div></div>
+        <div class="tile cream"><span class="g">90</span>
+          <div><h3>Sulfite brilho</h3><p>Alta brancura para textos e formulários.</p></div></div>
+        <div class="tile cream"><span class="g">120</span>
+          <div><h3>Brilho comercial</h3><p>Folders, catálogos e materiais de venda.</p></div></div>
+        <div class="tile wide ink"><span class="g">250</span>
+          <div><h3>Cartão 250 g/m²</h3><p>Cartões, folders e capas de livro.</p></div></div>
+        <div class="tile kraft"><span class="g">300</span>
+          <div><h3>Papel cartão rígido</h3><p>Embalagens rígidas e expositores.</p></div></div>
+        <div class="tile cream"><span class="g">350</span>
+          <div><h3>Capa e embalagem</h3><p>Estruturas de capa dura e caixas premium.</p></div></div>
+      </div>
+      <p class="note">* Gramaturas de referência — tabela comercial sob consulta.</p>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="ruler"><b>04</b><i></i><span>Cotação</span></div></div>
+
+  <!-- ======================= COTAÇÃO + LOCALIZAÇÃO ======================= -->
+  <section id="cotacao" class="quote">
+    <div class="wrap quote-grid">
+      <div class="form-panel">
+        <h2>Solicite uma cotação</h2>
+        <p class="sub">Preencha os dados e nossa equipe retorna com a proposta técnica.</p>
+
+        <form id="quoteForm">
+          <label><span>Nome</span><input type="text" name="nome" placeholder="Seu nome" required /></label>
+          <label><span>Empresa</span><input type="text" name="empresa" placeholder="Razão social" /></label>
+          <label><span>Telefone</span><input type="tel" name="telefone" placeholder="(11) 0000-0000" required /></label>
+          <label><span>Tipo de papel</span>
+            <select name="tipo">
+              <option>Offset</option><option>Sulfite</option><option>Cartão</option>
+              <option>Embalagens</option><option>Especial</option>
+            </select>
+          </label>
+          <label><span>Quantidade</span><input type="text" name="quantidade" placeholder="Ex.: 500 folhas" /></label>
+          <label><span>Gramatura</span><input type="text" name="gramatura" placeholder="Ex.: 90 g/m²" /></label>
+          <button class="submit" type="submit">Enviar solicitação</button>
+        </form>
+
+        <div class="ok" id="quoteOk" hidden>
+          <p class="t">Solicitação registrada</p>
+          <p class="b">Obrigado. Seu pedido de cotação foi registrado — envie-o agora pelo telefone ou
+          e-mail comercial da Reynal para que possamos responder com preço, prazo e forma de entrega.</p>
+          <button type="button" id="quoteReset">Preencher nova cotação</button>
+        </div>
+      </div>
+
+      <div id="localizacao">
+        <div class="bizcard">
+          <span class="watermark">R</span>
+          <span class="tag">Cartão de visita</span>
+          <h3>Reynal<br />Comércio de Papéis</h3>
+          <address>
+            Reynal Comércio de Papéis LTDA<br />
+            Avenida Dep. Emilio Carlos, 3903<br />
+            Vl. N. Cachoeirinha<br />
+            São Paulo · SP · CEP 02721-200
+          </address>
+          <div class="chips">
+            <span class="chip">CNPJ 47.693.601/0001-90</span>
+            <a class="chip map" target="_blank" rel="noreferrer"
+               href="https://www.google.com/maps/search/?api=1&query=Avenida%20Deputado%20Emilio%20Carlos%203903%2C%20S%C3%A3o%20Paulo%20SP">Ver no mapa</a>
+          </div>
+          <!-- Troque os "a preencher" pelos seus dados reais de contato -->
+          <div class="fill">Telefone comercial: <b>a preencher</b> · E-mail: <b>a preencher</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================ RODAPÉ ============================ -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <span class="fbrand">Reynal</span>
+        <p class="d">Distribuidora de papéis para o setor gráfico na cidade de São Paulo.</p>
+      </div>
+      <div>
+        <span class="lbl">Razão social</span>
+        <p class="val">Reynal Comércio de Papéis LTDA<br />CNPJ 47.693.601/0001-90</p>
+      </div>
+      <div>
+        <span class="lbl">Para correspondência</span>
+        <address class="val">
+          Reynal Comércio de Papéis LTDA<br />
+          Avenida Dep. Emilio Carlos, 3903<br />
+          Vl. N. Cachoeirinha<br />
+          São Paulo · SP · CEP 02721-200
+        </address>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Reynal Comércio de Papéis LTDA</span>
+      <span class="r">Catálogo · Grande São Paulo</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  var form = document.getElementById("quoteForm");
+  var ok = document.getElementById("quoteOk");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    form.hidden = true;
+    ok.hidden = false;
+  });
+  document.getElementById("quoteReset").addEventListener("click", function () {
+    form.reset();
+    ok.hidden = true;
+    form.hidden = false;
+  });
+</script>
 </body>
 </html>
-
